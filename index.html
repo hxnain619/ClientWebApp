@@ -57,9 +57,10 @@
 
         <!-- END NEW HEADER -->
 
-
         <!-- FORM WRAPPER -->
         <div class="form-wrapper">
+
+
 
                 <!-- START MULTISTEP FORM -->
                 <!-- multistep form -->
@@ -67,14 +68,16 @@
                 <form id="contact">
                         <fieldset class="tab">
                                 <legend>What is your favorite Audio Test Track?</legend>
-                                <input id='testTrack' name="testTrack" type="text" placeholder="Favorite test track..." required />
+                                <input id='testTrack' name="testTrack" type="text" placeholder="Favorite test track..."
+                                        required />
                                 <p><span class="error error1"></span></p>
                                 <button type="button" name="next" class="first action-button">Next</button>
                         </fieldset>
                         <!-- ******** Second Step ********* -->
                         <fieldset class="tab">
                                 <legend>What is your Favourite Audio Gear Brand?</legend>
-                                <input id='favBrand' name="favBrand" type="text" placeholder="Favourite audio brand..." required />
+                                <input id='favBrand' name="favBrand" type="text" placeholder="Favourite audio brand..."
+                                        required />
                                 <p><span class="error error2"></span></p>
                                 <button type="button" name="previous" class="secondPrevious previous">Previous</button>
                                 <button type="button" name="next" class="second action-button">Next</button>
@@ -82,19 +85,22 @@
                         <!-- ******** Third Step **********
                          -->
                         <fieldset class="tab">
-                                <legend>What is your favorite way to play music?</legend>
+                                <legend>What is your favorite Digital Audio File Format?</legend>
                                 <div class="custom-select vehicle-select">
-                                        <select name="favFileFormat" id="favFileFormat" class="select--box" required>
-                                                <option value="Choose An Option">Choose An Option ...</option>
-                                                <option value="Audio Cassette">Audio Cassette</option>
-                                                <option value="Any diesel Volkswagen">CD</option>
-                                                <option value="Daewoo">Digital files</option>
-                                                <option value="Dodge Neon">Streaming service</option>
-                                                <option value="Hummer">Vinyl records</option>
-                                                <option value="None of the above">None of the above</option>
+                                        <select name="favMediaFormat" id='favMediaFormat' class="select--box" required>
+                                                <option value="Select Format">Select Format ...</option>
+                                                <option value="None">None</option>
+                                                <option value="AAC">AAC</option>
+                                                <option value="AIFF">AIFF</option>
+                                                <option value="ALAC">ALAC</option>
+                                                <option value="MP3">MP3</option>
+                                                <option value="FLAC">FLAC</option>
+                                                <option value="Ogg Vorbis">Ogg Vorbis</option>
+                                                <option value="WAV">WAV</option>
+                                                <option value="WMA">WMA</option>
                                         </select>
                                 </div>
-                                <p><span class="error error3"></span></p>
+                                <p><span class="error error5"></span></p>
                                 <!--End Options-->
                                 <button type="button" name="previous" class="thirdPrevious previous">Previous</button>
                                 <button type="button" name="next" class="third action-button">Next</button>
@@ -125,32 +131,30 @@
                         </fieldset>
                         <!-- ************* Fifth Step *********** -->
                         <fieldset class="tab">
-                                <legend>What is your favorite Digital Audio File Format?</legend>
+                                <legend>What is your favorite way to play music?</legend>
                                 <div class="custom-select vehicle-select">
-                                        <select name="favMediaFormat" id='favMediaFormat' class="select--box" required>
-                                                <option value="Select Format">Select Format ...</option>
-                                                <option value="None">None</option>
-                                                <option value="AAC">AAC</option>
-                                                <option value="AIFF">AIFF</option>
-                                                <option value="ALAC">ALAC</option>
-                                                <option value="MP3">MP3</option>
-                                                <option value="FLAC">FLAC</option>
-                                                <option value="Ogg Vorbis">Ogg Vorbis</option>
-                                                <option value="WAV">WAV</option>
-                                                <option value="WMA">WMA</option>
+                                        <select name="favFileFormat" id="favFileFormat" class="select--box" required>
+                                                <option value="Choose An Option">Choose An Option ...</option>
+                                                <option value="Audio Cassette">Audio Cassette</option>
+                                                <option value="Any diesel Volkswagen">CD</option>
+                                                <option value="Daewoo">Digital files</option>
+                                                <option value="Dodge Neon">Streaming service</option>
+                                                <option value="Hummer">Vinyl records</option>
+                                                <option value="None of the above">None of the above</option>
                                         </select>
                                 </div>
-                                <p><span class="error error5"></span></p>
+                                <p><span class="error error3"></span></p>
                                 <!--End Options-->
                                 <button type="button" name="previous" class="fifthPrevious previous">Previous</button>
                                 <button type="button" name="next" class="fifth action-button">Next</button>
                         </fieldset>
+
                         <!-- ************* Sixth Step *********** -->
                         <fieldset class="tab">
                                 <legend>What is your favorite piece of high-end audio or audiophile gear that you own?
                                 </legend>
-                                <input id='brandBrandOwned' name="brandBrandOwned" type="text" placeholder="enter audio or gear you own .."
-                                        required />
+                                <input id='brandBrandOwned' name="brandBrandOwned" type="text"
+                                        placeholder="enter audio or gear you own .." required />
                                 <p><span class="error error6"></span></p>
                                 <button type="button" name="previous" class="sixthPrevious previous">Previous</button>
                                 <button type="button" name="next" class="sixth action-button">Next</button>
@@ -158,8 +162,8 @@
                         <!-- ************* Seventh Step *********** -->
                         <fieldset class="tab lastPurchase">
                                 <legend>What high-end audio or audiophile gear did you last buy?</legend>
-                                <input id='lastPurchase' name="lastPurchase" type="text" placeholder="enter your last purchase .."
-                                        required />
+                                <input id='lastPurchase' name="lastPurchase" type="text"
+                                        placeholder="enter your last purchase .." required />
                                 <p><span class="error error7"></span></p>
                                 <button type="button" name="previous" class="seventhPrevious previous">Previous</button>
                                 <button type="button" name="next" class="seventh action-button">Next</button>
@@ -167,8 +171,8 @@
                         <!-- ************* Eighth Step *********** -->
                         <fieldset class="tab nextPurchase">
                                 <legend>What high-end or audiophile gear do you plan to buy next?</legend>
-                                <input id='nextPurchase' name="nextPurchase" type="text" placeholder="enter your next purchase .."
-                                        required />
+                                <input id='nextPurchase' name="nextPurchase" type="text"
+                                        placeholder="enter your next purchase .." required />
                                 <p><span class="error error8"></span></p>
                                 <button type="button" name="previous" class="eighthPrevious previous">Previous</button>
                                 <button type="button" name="next" class="final action-button">Next</button>
@@ -276,31 +280,34 @@
                                                 <!--END options-->
                                                 <!--Terms & Conditions Checkbox-->
 
+
+                                                <label id="resident">
+                                                        <label>Are you a resident of one of the contiguous United
+                                                                States (not Alaska or Hawaii)</label>
+
+                                                        <label for="residentYes" class="checkbox-container">
+                                                                <input type="checkbox" value="Yes" name="resident"
+                                                                        id="residentYes" class="residency"
+                                                                        onclick="selectOne(this.value)" checked
+                                                                        >Yes
+                                                                <span class="checkbox-checkmark ageYes"></span>
+                                                        </label>
+                                                        <label for="residentNo" class="checkbox-container">
+                                                                <input type="checkbox" value="No" name="resident"
+                                                                        id="residentNo" class="residency"
+                                                                        onclick="selectOne(this.value)" >No
+                                                                <span class="checkbox-checkmark ageNo"></span>
+                                                        </label>
+                                                        <p><span class="errorResident"></span></p>
+
+                                                </label>
                                                 <!--END Terms & Conditions Checkbox-->
                                         </div>
-                                        
-                                        <label id="resident">
-                                                <label>Are you a resident of one of the contiguous United
-                                                        States (not Alaska or Hawaii)</label>
-
-                                                <label for="residentYes" class="radio-container">Yes
-                                                        <input type="radio" value="Yes" name="resident" id="residentYes"
-                                                               checked required>
-                                                        <span class="radio-checkmark ageYes"></span>
-                                                </label>
-                                                <label for="residentNo" class="radio-container">No
-                                                        <input type="radio" value="No" name="resident" id="residentNo"
-                                                                required>
-                                                        <span class="radio-checkmark ageNo"></span>
-                                                </label>
-                                                <p><span class="errorResident"></span></p>
-
-                                        </label>
                                         <label for="agreeTerms">Terms &amp; Conditions
                                                 <label for="agreeTerms" class="checkbox-container">I agree to
                                                         the terms &amp; conditions
                                                         <input type="checkbox" name="agreeTerms" id="agreeTerms"
-                                                                value="I agree" >
+                                                                value="I agree">
                                                         <span class="checkbox-checkmark agreeTerms"></span>
                                                 </label>
                                                 <p><span class="errorTerms"></span></p>
@@ -343,7 +350,20 @@
         <!-- FOOTER CONTAINER -->
 
         <!-- END FOOTER CONTAINER -->
+        <script>
 
+
+                function selectOne(checkbox) {
+                        var x = document.getElementsByClassName('residency');
+                        var i;
+
+                        for (i = 0; i < x.length; i++) {
+                                if (x[i].value != checkbox) x[i].checked = false;
+                        }
+                }
+
+
+        </script>
 </body>
 
 </html>
