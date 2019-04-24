@@ -1,0 +1,1350 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* CSS RESET 
+
+/* v2.0 | 20110126
+  http://meyerweb.com/eric/tools/css/reset/ 
+  License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+/*dl, dt, dd, ol, ul, li,*/
+dl, dt, dd,
+/*fieldset, form, label, legend,*/
+form,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+/*menu, nav, output, ruby, section, summary, */
+output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	/*list-style: none;*/
+	list-style: disc;
+}
+
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* MY STYLES */
+
+label {
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;	
+}
+
+/*custom Radio buttons*/
+
+/* The radio container */
+.radio-container {
+/*    display: block; */
+    position: relative;
+/*    padding-left: 35px; */
+	padding-left: 45px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /*margin: 0px;*/
+    /*margin: 20px;*/
+    margin: 40px;
+    
+}
+
+/* Hide the browser's default radio button */
+.radio-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio button */
+.radio-checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+/*    height: 25px; */
+	height: 32px; 
+/*    width: 25px; */
+	width: 32px;
+    background-color: #eee;
+    border-radius: 50%;
+/*    border: 1px solid #bbbbbb; */
+	border: 3px solid #bbbbbb; 
+}
+
+/* On mouse-over, add a grey background color */
+.radio-container:hover input ~ .radio-checkmark {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.radio-container input:checked ~ .radio-checkmark {
+/*    background-color: #2196F3; */ /*blue*/
+	background-color: #FF0083; /*pink*/
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.radio-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio-container input:checked ~ .radio-checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio-container .radio-checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+/*	background: white; */
+	background: #000000;
+}
+/*end custom radio buttons*/
+
+/*Custom checkbox */
+
+/* The checkbox container */
+.checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkbox-checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+/*    height: 25px; */
+/*    height: 25px; */
+	height: 32px;
+	width: 32px;
+    background-color: #eee;
+    border: 3px solid #bbbbbb; //dark grey
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input ~ .checkbox-checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkbox-checkmark {
+/*    background-color: #2196F3; */ /*blue*/
+	background-color: #FF0083; /*pink*/
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkbox-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkbox-checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .checkbox-checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+/*    border: solid white; */
+	border: solid #000000;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg)
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+/*end custom checkbox*/
+
+/*FORM*/
+
+/*Contact from grid*/
+.form-fields-grid-wrapper {
+	display: grid;
+   	grid-template-columns: 2fr;
+}
+
+.contact-form {
+	display: grid;
+    	grid-template-columns: 1fr 1fr;
+    	grid-gap: 20px;	
+}
+/*END Contact from grid*/
+
+.next, .submitBtn {
+/*	float: right; */
+}
+
+legend {
+	font-weight:bold;
+/*added*/
+	font-size: 36px;
+
+}
+
+fieldset {
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+/*	border:  solid 1px #b6cbd4; */
+	margin: 20px 0px 20px 0px;
+	width: 100%;
+	/*margin-top: 0px;*/
+	margin-top: 50px;
+	border-style: none;
+	padding-top: 60px;
+}
+
+.form-wrapper {
+/*text-align: left;*/
+text-align: center;
+margin-right: auto;
+margin-left: auto;
+position: relative;
+top: 100px;
+/*width: 90%;*/
+width: 60%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f1;
+}
+
+/* #regForm { */
+#contact {
+  background-color: #ffffff;
+  /*margin: 100px auto;*/
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 0px;
+  /* padding: 40px; */
+  width: 100%;
+  min-width: 300px;
+  position: relative;
+}
+
+
+h1 {
+  text-align: center;  
+}
+
+html input[type="text"], input[type="email"], input[type="number"] {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  border: 1px solid #aaaaaa;
+/*  background-color: #b6cbd4;*/
+  border-radius: 25px;
+}
+
+html input[type="radio"] {
+padding: 10px;
+width: 5%;
+  font-size: 17px;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+/*not used for <fieldset> multi-step method*/
+/*.tab {
+  display: none;
+}*/
+
+
+button {
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#prevBtn {
+  background-color: #bbbbbb;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  /*height: 15px;*/
+  /*width: 15px;*/
+  height: 25px;
+  width: 25px;
+  /*margin: 0 2px;*/
+  margin: 0 5px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step {
+	opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+/*  background-color: #4CAF50;*/
+  background-color: rgba(102, 159, 59, 0.81);
+}
+/*END FORM*
+
+/*Burger menu and new header start*/
+
+.wrapper {
+	width: 100%;
+	margin: 0 auto;
+}
+
+nav {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+height: 65px;
+width: 100%;
+border-bottom: solid .1rem #b6cbd4;
+background-color: #ffffff;
+z-index: 1000;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+}
+
+nav ul.opening {
+  display: block;
+  height: 30px;
+}
+
+nav li { 
+/*border-bottom: 1px solid #f6f4e2; */
+border-bottom: 1px solid #b6cbd4;
+font-size: larger;
+}
+
+nav li:last-child {
+	border-bottom: none;
+}
+
+nav a {
+  /*color: #EBEBD3;*/
+  color: #000000;
+  /*background: #e7a119;*/
+  background-color: #ffffff;
+  display: block;
+  /*padding: 1.5em 4em 1.5em 3em;*/
+  /*text-transform: uppercase;*/
+  text-decoration: none;
+}
+
+nav a:hover, nav a:focus {
+	/*background: #E4B363;*/
+	}
+
+.site-nav--icon {
+  font-size: 1.4em;
+  margin-right: 1em;
+  width: 1.1em;
+  text-align: right;
+  color: rgba(255,255,255,.4);
+}
+
+/*burger menu and new header end */
+/*burger menu toggle start*/
+.menu-toggle {
+  position: absolute;
+  padding: 0.8em;
+  top: 1em;
+  right: .5em;
+  cursor: pointer;
+}
+
+.hamburger, .hamburger::before, .hamburger::after {
+  content: '';
+  display: block;
+ /* background: #EBEBD3;*/
+ background: #000000;
+  height: 3px;
+  width: 2em;
+  border-radius: 3px;
+  -webkit-transition: all ease-in-out 350ms;
+  transition: all ease-in-out 350ms;
+}
+
+.hamburger::before {
+  -webkit-transform: translateY(-7px);
+  transform: translateY(-7px);
+}
+
+.hamburger::after {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+}
+
+.open .hamburger {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.open .hamburger::before { display: none; }
+
+.open .hamburger::after {
+  -webkit-transform: translateY(-1px) rotate(-90deg);
+  transform: translateY(-1px) rotate(-90deg);
+}
+/*burger menu toggle end*/
+
+/*burger menu toggle*/
+/*@media (min-width: 780px) { */
+/*@media screen and (min-width: 768px) {*/
+@media screen and (min-width: 769px) {
+	
+.menu-toggle {
+	display: none; 
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+nav li {
+  flex: 1 1 auto;
+  border: none;
+}
+
+nav li a {
+  /*padding: 1.5em 1.3em 1.5em 1.3em;*/
+  border: none;
+  /*background-color: #f04343;*/
+margin-right: 2em;
+margin-top: 1em;
+}
+
+nav a:hover,  nav a:focus { 
+background-color: rgba(255,255,255,.10); 
+}
+
+.logo {
+  flex: 0 0 200px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+ /* background-color: #f04343;*/
+ background-color: #ffffff;
+ width: 100%;
+ z-index: 1000;
+}
+
+}
+/*end burger menu small screens*/
+
+/*CHECK Rate Button container on Qualified page*/
+.check-rate-button-container-success {
+/*margin-top: 80px;*/
+border: 1.5px dashed;
+padding: 20px;
+/*width: 430px;*/
+/*width: 100%;*/
+min-width: 260px;
+width: 25%;
+margin-right: auto;
+margin-left: auto;
+text-align: center;
+/*background-color: #FFEBCD;*/
+}
+
+/*CHECK Rate Button container on Check Eligibility page*/
+.check-rate-button-container {
+margin-top: 80px;
+border: 1px dashed;
+padding: 20px;
+/*width: 430px;*/
+width: 30%;
+margin-right: 10px;
+float: right;
+}
+
+/*@media screen and (max-width: 767px) {*/
+@media screen and (max-width: 769px) {
+  .check-rate-button-container {
+    /*width: 260px;*/
+    /*width: 60%;*/
+    width: 80%;
+    text-align: center;
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-bottom: 10px;
+    padding: 10px;
+    /*clear: both;*/
+    /*position: relative;*/
+   /* float: left;*/
+  }
+}
+/*ipad pro portrait and landscape*/
+/*@media screen and (min-width: 768px) {
+  .check-rate-button-container {
+    width: 260px;
+  }
+} */
+
+@media screen and (min-width: 992px) {
+  .check-rate-button-container {
+    width: 30%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .check-rate-button-container {
+    width: 30%;
+  }
+}
+
+
+.check-rate-button {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+iframe.freebirdFormviewerViewFooterDisclaimer {
+	display: none;
+}
+iframe.freebirdFormviewerViewFooterImageContainer {
+		display: none;
+}
+
+.embed-container {
+/*height: 1400px;*/
+height: 1520px;
+/*width: 680px;*/
+width: 60%;
+margin-left: 20px;
+}
+
+/*iphone portrait and landscape*/
+@media screen and (max-width: 769px) {
+  .embed-container {
+    /*width: 60%;*/
+    width: 85%;
+    margin-left: 8%;
+     margin-right: 8%;
+    /*height: 1910px;*/
+    height: 2040px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .embed-container {
+   /* width: 660px;*/
+   width: 60%;
+    height: 1510px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .embed-container {
+    width: 60%;
+  }
+}
+
+.iframe-position {
+position: relative;
+top: 0px;
+width: 100%;
+}
+
+/*iphoneportrait and landscape*/
+@media screen and (max-width: 767px) {
+  .iframe-position {
+    top: 0px;
+  }
+}
+/*ipad pro portrait and landscape*/
+/*@media screen and (min-width: 769px) {*/
+@media screen and (max-width: 991px) {
+  .iframe-position {
+    top: 0px;
+  }
+}
+
+/*@media screen and (min-width: 992px) {
+  .iframe-position {
+    top: -110px;
+  }
+} */
+@media screen and (min-width: 1200px) {
+  .iframe-position {
+    top: -110px;
+  }
+}
+
+.google-form {
+	/*width: 260px;height: 335px;padding: 0;overflow: hidden;position: relative;*/
+width: 600px;
+height: 800px;
+padding: 0;
+overflow: hidden;
+position: relative;
+}
+
+/*.google-form iframe { */
+/*	width: 700px;height: 900px;position: absolute; left: -60px; top: -330px; */
+/*	} */
+
+
+.sub-heading {
+color: #fda929;	
+}
+
+.body-text-container {
+margin-left: auto;
+margin-right: auto;
+padding-left: 2.4rem;
+padding-right: 2.4rem;
+max-width: 72.25em;
+padding-top: 3rem;
+padding-bottom: 3rem;
+}
+.body-text-sub-container {
+text-align: left;
+width: 100%;
+margin-top: 30px	
+}
+
+.page-footer {
+padding: 1rem 0;
+background: #b6cbd4;
+margin-left: auto;
+margin-right: auto;
+padding-left: 2rem;
+padding-right: 2rem;
+max-width: 72.25em;
+margin-bottom: 1em;
+/*margin-top: 100px;*/
+margin-top: 120px;
+}
+
+@media screen and (max-width: 375px) {
+.page-footer {
+    margin-left: 0px;
+    text-align: center;
+  }
+}
+.copyright {
+float: left;
+width: auto;
+text-align: left;
+margin: 0;
+color: #fff;
+}
+@media screen and (max-width: 767px) {
+.copyright {
+margin: 0;
+    text-align: center;
+    float: none;
+}
+}
+.footer-row {
+	/*margin-bottom: 1em;*/
+}
+
+@media screen and (max-width: 420px) {
+.footer-row {
+    margin-bottom: 2em;
+    text-align: center;
+  }
+}
+/*@media screen and (max-width: 768px) { */
+@media screen and (min-width: 768px) {
+.footer-row {
+    /*margin-bottom: 2em;*/
+    margin-bottom: 2em;
+  }
+}
+/*@media screen and (min-width: 769px) {
+  .footer-row {
+    margin-bottom: 2em;
+  }
+} */
+/*ipad pro portrait and landscape*/
+@media screen and (min-width: 992px) {
+  .footer-row {
+    margin-bottom: 1em;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .footer-row {
+    margin-bottom: 1em;
+  }
+}
+
+
+.footer-menu {
+float: right;
+width: auto;
+text-align: left;
+margin: 0;
+}
+@media screen and (max-width: 767px) {
+.footer-menu {
+float: none;
+text-align: center;
+margin-bottom: 20px;
+  }
+}
+
+.footer-menu-item {
+display: inline-block;
+/*margin: 0 0 0 2rem;*/
+margin-right: 2em;
+list-style-type: none;
+}
+.footer-menu-link {
+	color: #fff;
+}
+
+.page-header {
+z-index: 3000;
+/*position: relative;*/
+position: fixed;
+height: 65px;
+width: 100%;
+border-bottom: solid .1rem #b6cbd4;
+}
+
+/*@media screen and (min-width: 48em) {
+.page-header {
+overflow-y: visible;
+/*height: 7rem!important;*/
+/*padding: 0;
+}
+} */
+
+.header-container {
+/*position: relative;*/
+position: relative;
+height: 100%;
+margin-right: auto;
+padding-left: 2rem;
+padding-right: 2rem;
+max-width: 72.25em;
+background: #ffffff;
+}
+.header-logo-container {
+/*z-index: 1;*/	
+text-align: left;
+padding-top: 5px;
+padding-left: 2rem;
+}
+@media screen and (min-width: 48em) {
+.page-header-logo {
+top: 50%;
+left: 1.8rem;
+position: absolute;
+height: auto;
+padding: 0;
+}
+}
+
+.logo-img {
+height: 3rem;
+width: 15rem;
+vertical-align: middle;	
+}
+@media screen and (min-width: 48em) {
+.logo-img {
+max-height: 4rem;
+max-width: 20rem;
+}
+}
+/* *{margin:0; padding:0;} */
+
+html, body {
+	text-align: center;
+	height: 100%;
+	font-family: 'bariol_regularregular', "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+	font-size: 18px;
+	line-height: 23px;
+	background-color: #ffffff;
+	-webkit-font-smoothing: antialiased;
+   }
+
+a {
+	text-decoration: none;
+}
+
+
+h1 {
+	font-family: 'bariol_boldbold';
+	font-size: 40px;
+	padding-bottom: 15px;
+	line-height: 40px;
+}
+
+h2 {
+	font-family: 'bariol_boldbold';
+	font-size: 32px;
+	padding-bottom: 15px;
+	line-height: 40px;
+}
+
+h3 {
+	font-size: 22px;
+	padding-top: 15px;
+	line-height: 28px;
+}
+
+h4 {
+	font-family: 'bariol_boldbold';
+	font-size: 32px;
+	padding-bottom: 5px;
+	line-height: 40px;
+}
+
+
+sup { 
+    vertical-align: super;
+    font-size: 18px;
+    padding-right: 2px;
+ 
+}
+
+strike {
+
+}
+
+#cta-container {
+	/* background-image: url(../images/bg.jpg); */
+	background-image: url(../images/SmilingWomanDriving5.jpg);
+	background-attachment: fixed;
+	/* background-position: 0px 0px; */
+	/* background-position: center; */
+	/* background-size: auto 712px; */
+	/* background-size: 1200px 712px; */
+	background-size: 100% auto;
+	width: 100%;
+	height: 450px;
+	background-repeat: no-repeat;
+	color: white;	 
+}
+
+.cta {
+	max-width: 960px;
+	margin: 0 auto;
+	/*padding-bottom: 95px;*/
+	/*padding-bottom: 55px;*/
+	padding-bottom: 75px;
+}
+
+.copy {
+	padding: 0 0 40px 0;
+	max-width: 890px;
+	margin: 0 auto;
+}
+
+.guide-copy {
+	padding: 0 0 40px 0;
+max-width: 1200px;
+margin: 40px;
+text-align: left;
+}
+
+.about-us-body {
+	margin: 40px;
+}
+
+.about {
+	color: #fda929;
+}
+
+.about-subheading {
+	color: #ffffff;
+	font-weight: bold;
+}
+
+.logo {
+	/*padding: 50px 0;*/
+	padding-top: 90px;
+padding-bottom: 20px;
+}
+
+.main-btn {
+	background-color: white;
+	font-family: 'bariol_boldbold';
+	color: #004977;
+	padding:11px 30px;
+	border-radius: 20px;
+	font-size: 22px;
+}
+
+.main-btn:hover {
+	cursor: pointer;
+	background-color: #c0e4fb;
+}
+
+.pricing {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 50px 5px;
+	text-align: center;
+	font-family: 'bariol_boldbold';
+}
+
+.plan {
+	width: 210px;
+	height: 300px;
+	border-radius: 8px;
+	background-color: #37a1e4;
+	display: inline-block;
+	margin: 15px 22px;
+	color: white;
+	padding: 8px 0px;
+}
+
+.plan-type {
+	font-size: 25px;
+	padding-bottom: 10px;
+}
+
+.plan-price {
+	background-color: #0a6aa6;
+	padding: 3px 0;
+	padding-top: 6px;
+	font-size: 44px;
+	margin-bottom: 5px;
+}
+
+.amount {
+	margin-left: -10px;
+}
+
+.tiny {
+	font-size: 16px;
+	padding-top: 3px;
+}
+		
+.feature {
+	font-size: 16px;
+	padding: 6px 0;
+}	
+
+.plan-btn {
+	padding-top: 15px;
+}
+
+.plan-btn-style {
+	background-color: white;
+	border-radius: 15px;
+	padding: 5px 35px;
+	color: #3c3c3c;
+	font-size: 16px;
+}
+
+.plan-btn-style:hover {
+	background-color: #cde7f4;
+}
+
+.plan-best {
+	width: 210px;
+	height: 300px;
+	border-radius: 8px;
+	background-color: #88d54f;
+	display: inline-block;
+	margin: 15px 22px;
+	color: white;
+	padding: 8px 0px;
+}
+
+.plan-price-best {
+	background-color: #5da528;
+	padding: 3px 0;
+	padding-top: 6px;
+	font-size: 44px;
+	margin-bottom: 5px;
+}
+
+#feature-a-container {
+	background-color: #f6f8f9;
+	display: inline-block;
+	width: 100%;
+	padding: 75px 0;
+	
+}
+
+.feature-a {
+	max-width: 960px;
+	margin: 0 auto;
+	text-align: left;
+	padding-bottom: 75px;
+}
+
+img {
+	width: auto;
+	height: auto;
+}
+
+.feature-a-copy {
+	float: left;
+	padding-left: 10px;
+	padding-right: 50px;
+	padding-bottom: 25px;
+	padding-top: 10px;
+	max-width: 500px;
+	line-height: 29px;
+}
+
+.feature-a-image {
+	float: left;
+}
+
+.feature-button {
+	margin-top: 30px;
+}
+
+.feature-btn {
+	background-color: #88d54f;
+	padding: 10px 50px;
+	border-radius: 10px;
+	color: white;
+	font-family: 'bariol_boldbold';
+}
+
+.feature-btn:hover {
+	background-color: #63ac32;
+}
+
+#feature-b-container {
+	background-color: #ffffff;
+	display: inline-block;
+	width: 100%;
+	padding: 75px 0;
+}
+
+.feature-b {
+	max-width: 960px;
+	margin: 0 auto;
+	text-align: left;
+	
+}
+
+.feature-b-copy {
+	float: left;
+	padding-left: 50px;
+	padding-right: 10px;
+	padding-bottom: 25px;
+	padding-top: 10px;
+	max-width: 500px;
+	line-height: 29px;
+}
+
+.feature-b-image {
+	float: left;
+}
+
+#footer-container {
+	background-color: #ffffff;
+	padding: 50px 0;
+	display: inline-block;
+	width: 100%;
+}
+
+.footer {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}
+
+
+
+#signup {
+	text-align: center;	
+	background-color: #f2f2f2;
+	border-radius: 4px;
+	padding: 25px;
+	padding-bottom: 35px;	
+	/*max-width: 450px;*/
+	display: none;
+	margin: 0 10px;
+	}
+
+.size16 {
+	font-size: 17px;	
+	line-height: 28px;
+	padding-bottom: 15px;
+	color: #555555;
+	}
+	
+/*ADDED for dropdown select lists*/
+/*From https://www.w3schools.com/howto/howto_custom_select.asp*/
+/*the container must be positioned relative:*/
+.custom-select {
+  position: relative;
+  /*font-family: Arial;*/
+  border-radius: 25px;
+}
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+.select-selected {
+  /*background-color: DodgerBlue;*/
+  background-color: #b6cbd4;
+  border-radius: 25px;
+}
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+ /* border-color: #fff transparent transparent transparent;*/
+ border-color: #000 transparent transparent transparent;
+}
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  /*color: #ffffff;*/
+  color: #000000;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  /*background-color: DodgerBlue;*/
+  background-color: #b6cbd4;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+/*END for dropdown select lists*/	
+
+/* Removed for new form above*/
+/*input, button, select, textarea { 
+textarea  {
+	width: 90%;	
+	
+} */
+
+.mc-field-group input {
+	margin-bottom: 15px;
+	border-radius: 4px;	
+	padding: 10px;
+	border:1px solid #9b9894;
+	text-align: center;
+	font-size: 16px;
+}
+
+/* Removed for new form above*/
+/*button, html input[type="button"], input[type="reset"], input[type="submit"] {
+	background-color: #41bf65;
+	border:0;
+	color: white;
+	border-radius: 4px;	
+	padding: 15px ;
+	-webkit-font-smoothing: antialiased;
+	width: 95%;
+	font-family: 'bariol_boldbold';
+} */
+
+
+#book-container ul {
+	padding: 0px;
+	list-style-type: none;
+}
+
+.hide {
+	display: none;
+}
+
+
+
+#Field1 {
+	padding: 12px 9px;
+	font-size: 13px;
+	width: 315px;
+	border: 1px solid #b7b7b7;
+	text-align: center;
+	border-radius: 5px;
+}
+
+#saveForm {
+	background-color: #ff6161;
+	border: none;
+	color: white;
+	font-size: 18px;
+	padding: 10px;
+	width: 335px;
+	border-radius: 5px;
+	margin-top: 13px;
+	cursor: pointer;
+}
+
+#saveForm:hover {
+	background-color: #a53737;
+
+}
+
+#no {
+	font-size: 14px;
+	color: #646464;
+	padding-top: 10px;
+}
+
+#no a {
+	color: #646464;
+}
+
+#no a:hover {
+	text-decoration: underline;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media screen and (max-width: 420px) {
+
+.feature-a-image {
+	display: none;
+}
+
+.feature-b-image {
+	display: none;
+}
+
+.feature-a {
+	text-align: center;
+	margin: 0 auto;
+	with: auto;
+}
+
+.feature-b {
+	text-align: center;
+}
+
+.feature-b-copy {
+	float: left;
+	padding-left: 10px;
+	padding-right: 50px;
+	padding-bottom: 25px;
+	padding-top: 10px;
+	max-width: 500px;
+	line-height: 29px;
+}
+}
+

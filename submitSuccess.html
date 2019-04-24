@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="Rateyoursound giveaway entry success" name="description">
+
+    <link href="/favicon.ico" rel="icon" type="image/x-icon">
+    
+    <link href="css/form-complete.css" media="all" rel="stylesheet" type="text/css">
+    
+    <link charset="utf-8" href="css/stylesheet.css" rel="stylesheet" type="text/css">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	
+	<!-- *** EDIT ME *** -->
+    <title>Success! You are entered into the giveaway sweepstakes.</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118442135-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-118442135-1');
+</script>
+
+    </head>
+<body>
+<!-- NEW HEADER -->
+ 
+<!-- END NEW HEADER -->
+
+<!-- <div class="body-text-container">
+<div class="body-text-sub-container"> -->
+
+<!-- Final success tab -->
+<!--<div class="tab"> -->
+<fieldset id="success_tab">
+<legend>Success!</legend>
+<div id="resultsPage">
+<p>
+<h2>You are entered into the giveaway sweepstakes.</h2>
+</p>
+<p>
+<div id="redirectMsg">Redirecting to your Rateyoursound.com <span id="countdown">3</span> seconds</div>
+</p>
+</div>
+</fieldset>
+<!-- </div> -->
+    <!-- END Final success tab -->
+
+ </div>
+    </div>
+<!-- Modify this according to your requirement -->
+
+<!-- JavaScript part -->
+<script type="text/javascript">
+    
+    // Total seconds to wait
+    var seconds = 3;
+    
+    function countdown() {
+        seconds = seconds - 1;
+        if (seconds < 0) {
+            // Change your redirection link here
+            // window.location = "https://duckdev.com";
+            window.location = "https://www.rateyoursound.com";
+        } else {
+            // Update remaining seconds
+            document.getElementById("countdown").innerHTML = seconds;
+            // Count down using javascript
+            window.setTimeout("countdown()", 1000);
+        }
+    }
+    
+    // Run countdown function
+    countdown();
+    
+</script>    
+    
+<!-- FOOTER -->
+ 
+<!-- END FOOTER -->
+
+</body>
+
+</html>

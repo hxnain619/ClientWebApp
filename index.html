@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <!-- Prevent scaling on mobile -->
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+        <!-- *** EDIT ME *** -->
+
+        <title>Check To See If You Are Eligible - AutoRefinance</title>
+
+        <!-- *** EDIT ME *** -->
+        <meta content="Auto refinance, car refinance, check eliginility for auto refinance" name="keywords">
+
+        <!-- *** EDIT ME *** -->
+        <meta content="Check to find out if you are eligible for our car refinance offer" name="description">
+
+        <!-- <link href="/favicon.ico" rel="icon" type="image/x-icon"> -->
+
+        <link href="css/form-complete.css" media="all" rel="stylesheet" type="text/css">
+        <link href="css/loader-default.css" rel="stylesheet" type="text/css">
+
+        <link charset="utf-8" href="css/stylesheet.css" rel="stylesheet" type="text/css">
+        <!-- Jquery -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+        <script src="js/jquery.min.js"></script>
+
+        <!-- Form animation -->
+        <link href="css/animate-style.css" media="all" rel="stylesheet" type="text/css">
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.0/jquery.easing.min.js" integrity="sha256-nVIZYMDqqU8m8SC5smkwk6OdGr3m9zqqSGjrFGhah9E=" crossorigin="anonymous"></script>-->
+        <script src="js/jquery.easing.min.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118442135-1"></script>
+        <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag() { dataLayer.push(arguments); }
+                gtag('js', new Date());
+
+                gtag('config', 'UA-118442135-1');
+        </script>
+
+</head>
+
+<body>
+        <style>
+                * {
+                        outline: none;
+                }
+                legend {
+                        line-height: 1;
+                }
+        </style>
+        <!-- NEW HEADER -->
+
+        <!-- END NEW HEADER -->
+
+
+        <!-- FORM WRAPPER -->
+        <div class="form-wrapper">
+
+                <!-- START MULTISTEP FORM -->
+                <!-- multistep form -->
+                <!-- *********** First Step ************* -->
+                <form id="contact">
+                        <fieldset class="tab">
+                                <legend>What is your favorite Audio Test Track?</legend>
+                                <input id='favAudioTrack' type="text" placeholder="Favorite test track..." required />
+                                <p><span class="error error1"></span></p>
+                                <button type="button" name="next" class="first action-button">Next</button>
+                        </fieldset>
+                        <!-- ******** Second Step ********* -->
+                        <fieldset>
+                                <legend>What is your Favourite Audio Gear Brand?</legend>
+                                <input id='favAudioGear' type="text" placeholder="Favourite audio brand..." required />
+                                <p><span class="error error2"></span></p>
+                                <button type="button" name="previous" class="secondPrevious previous">Previous</button>
+                                <button type="button" name="next" class="second action-button">Next</button>
+                        </fieldset>
+                        <!-- ******** Third Step **********
+                         -->
+                        <fieldset class="tab">
+                                <legend>What is your favorite way to play music?</legend>
+                                <div class="custom-select vehicle-select">
+                                        <select name="excludedMarque" id="options" class="select--box" required>
+                                                <option value="Choose An Option">Choose An Option ...</option>
+                                                <option value="Audio Cassette">Audio Cassette</option>
+                                                <option value="Any diesel Volkswagen">CD</option>
+                                                <option value="Daewoo">Digital files</option>
+                                                <option value="Dodge Neon">Streaming service</option>
+                                                <option value="Hummer">Vinyl records</option>
+                                                <option value="None of the above">None of the above</option>
+                                        </select>
+                                </div>
+                                <p><span class="error error3"></span></p>
+                                <!--End Options-->
+                                <button type="button" name="previous" class="thirdPrevious previous">Previous</button>
+                                <button type="button" name="next" class="third action-button">Next</button>
+                        </fieldset>
+                        <!-- ********** Fourth Step ********** -->
+                        <fieldset class="tab">
+                                <legend>What is your favorite Music Streaming Service?</legend>
+                                <div class="custom-select vehicle-select">
+                                        <select name="excludedMarque" id='services' class="select--box" required>
+                                                <option value="Select Services">Select Services ...</option>
+                                                <option value="None">None</option>
+                                                <option value="Amazon Music">Amazon Music</option>
+                                                <option value="Apple Music">Apple Music</option>
+                                                <option value="Beats Music">Beats Music</option>
+                                                <option value="Deezer">Deezer</option>
+                                                <option value="Google Play Music">Google Play Music</option>
+                                                <option value="Groove Music">Groove Music</option>
+                                                <option value="Pandora">Pandora</option>
+                                                <option value="Spotify">Spotify</option>
+                                                <option value="Tidal">Tidal</option>
+                                                <option value="QoBuzz">QoBuzz</option>
+                                        </select>
+                                </div>
+                                <p><span class="error error4"></span></p>
+                                <!--End Options-->
+                                <button type="button" name="previous" class="fourthPrevious previous">Previous</button>
+                                <button type="button" name="next" class="fourth action-button">Next</button>
+                        </fieldset>
+                        <!-- ************* Fifth Step *********** -->
+                        <fieldset class="tab">
+                                <legend>What is your favorite Digital Audio File Format?</legend>
+                                <div class="custom-select vehicle-select">
+                                        <select name="excludedMarque" id='format' class="select--box" required>
+                                                <option value="Select Format">Select Format ...</option>
+                                                <option value="None">None</option>
+                                                <option value="AAC">AAC</option>
+                                                <option value="AIFF">AIFF</option>
+                                                <option value="ALAC">ALAC</option>
+                                                <option value="MP3">MP3</option>
+                                                <option value="FLAC">FLAC</option>
+                                                <option value="Ogg Vorbis">Ogg Vorbis</option>
+                                                <option value="WAV">WAV</option>
+                                                <option value="WMA">WMA</option>
+                                        </select>
+                                </div>
+                                <p><span class="error error5"></span></p>
+                                <!--End Options-->
+                                <button type="button" name="previous" class="fifthPrevious previous">Previous</button>
+                                <button type="button" name="next" class="fifth action-button">Next</button>
+                        </fieldset>
+                        <!-- ************* Sixth Step *********** -->
+                        <fieldset class="tab">
+                                <legend>What is your favorite piece of high-end audio or audiophile gear that you own?
+                                </legend>
+                                <input id='favPieceOf' type="text" required />
+                                <p><span class="error error6"></span></p>
+                                <button type="button" name="previous" class="sixthPrevious previous">Previous</button>
+                                <button type="button" name="next" class="sixth action-button">Next</button>
+                        </fieldset>
+                        <!-- ************* Seventh Step *********** -->
+                        <fieldset class="tab">
+                                <legend>What high-end audio or audiophile gear did you last buy?</legend>
+                                <input id='lastGearBuy' type="text" required />
+                                <p><span class="error error7"></span></p>
+                                <button type="button" name="previous" class="seventhPrevious previous">Previous</button>
+                                <button type="button" name="next" class="seventh action-button">Next</button>
+                        </fieldset>
+                        <!-- ************* Eighth Step *********** -->
+                        <fieldset class="tab">
+                                <legend>What high-end or audiophile gear do you plan to buy next?</legend>
+                                <input id='nextBuy' type="text" required />
+                                <p><span class="error error8"></span></p>
+                                <button type="button" name="previous" class="eighthPrevious previous">Previous</button>
+                                <button type="button" name="next" class="final action-button">Next</button>
+                        </fieldset>
+
+
+                        <fieldset id="about_you" class="tab">
+                                <div class="loader loader-default" data-text="Checking..."></div>
+                                <legend>About you</legend>
+                                <div class="form-fields-grid-wrapper">
+                                        <div class="contact-form">
+                                                <div>
+                                                        <label for="firstName">First name</label>
+                                                        <input type="text" placeholder="First name..."
+                                                                oninput="this.className = ''" name="firstName"
+                                                                id="firstName">
+                                                        <p><span class="errorFirstName"></span></p>
+                                                </div>
+                                                <div>
+                                                        <label for="lastName">Last name</label>
+                                                        <input type="text" placeholder="Last name..."
+                                                                oninput="this.className = ''" name="lastName"
+                                                                id="lastName">
+                                                        <p><span class="errorLastName"></span></p>
+                                                </div>
+
+                                                <div>
+                                                        <label for="email">Email</label>
+                                                        <input type="email" placeholder="E-mail..."
+                                                                oninput="this.className = ''" name="email" id="email">
+                                                        <p><span class="errorEmail"></span></p>
+                                                </div>
+
+                                                <div>
+                                                        <label for="zipcode">Zip code</label>
+                                                        <input type="number" placeholder="Zip code..."
+                                                                oninput="this.className = ''" name="zipcode"
+                                                                id="zipCode" maxlength="5">
+                                                        <p><span class='errorZipCode'></span></p>
+                                                </div>
+
+                                                <!--options-->
+                                                <label for="state">State
+                                                        <div class="custom-select state-select">
+                                                                <select name="state" class="state" required>
+                                                                        <option value="Select State:">Select State:
+                                                                        </option>
+                                                                        <option value="AK">Alaska</option>
+                                                                        <option value="AL">Alabama</option>
+                                                                        <option value="AR">Arkansas</option>
+                                                                        <option value="AZ">Arizona</option>
+                                                                        <option value="CA">California</option>
+                                                                        <option value="CO">Colorado</option>
+                                                                        <option value="CT">Connecticut</option>
+                                                                        <option value="DC">District of Columbia</option>
+                                                                        <option value="DE">Delaware</option>
+                                                                        <option value="FL">Florida</option>
+                                                                        <option value="GA">Georgia</option>
+                                                                        <option value="HI">Hawaii</option>
+                                                                        <option value="IA">Iowa</option>
+                                                                        <option value="ID">Idaho</option>
+                                                                        <option value="IL">Illinois</option>
+                                                                        <option value="IN">Indiana</option>
+                                                                        <option value="KS">Kansas</option>
+                                                                        <option value="KY">Kentucky</option>
+                                                                        <option value="LA">Louisiana</option>
+                                                                        <option value="MA">Massachusetts</option>
+                                                                        <option value="MD">Maryland</option>
+                                                                        <option value="ME">Maine</option>
+                                                                        <option value="MI">Michigan</option>
+                                                                        <option value="MN">Minnesota</option>
+                                                                        <option value="MO">Missouri</option>
+                                                                        <option value="MS">Mississippi</option>
+                                                                        <option value="MT">Montana</option>
+                                                                        <option value="NC">North Carolina</option>
+                                                                        <option value="ND">North Dakota</option>
+                                                                        <option value="NE">Nebraska</option>
+                                                                        <option value="NH">New Hampshire</option>
+                                                                        <option value="NJ">New Jersey</option>
+                                                                        <option value="NM">New Mexico</option>
+                                                                        <option value="NV">Nevada</option>
+                                                                        <option value="NY">New York</option>
+                                                                        <option value="OH">Ohio</option>
+                                                                        <option value="OK">Oklahoma</option>
+                                                                        <option value="OR">Oregon</option>
+                                                                        <option value="PA">Pennsylvania</option>
+                                                                        <option value="PR">Puerto Rico</option>
+                                                                        <option value="RI">Rhode Island</option>
+                                                                        <option value="SC">South Carolina</option>
+                                                                        <option value="SD">South Dakota</option>
+                                                                        <option value="TN">Tennessee</option>
+                                                                        <option value="TX">Texas</option>
+                                                                        <option value="UT">Utah</option>
+                                                                        <option value="VA">Virginia</option>
+                                                                        <option value="VT">Vermont</option>
+                                                                        <option value="WA">Washington</option>
+                                                                        <option value="WI">Wisconsin</option>
+                                                                        <option value="WV">West Virginia</option>
+                                                                        <option value="WY">Wyoming</option>
+                                                                </select>
+                                                        </div>
+                                                        <p><span class="errorState"></span></p>
+                                                </label>
+                                                <!--END options-->
+                                                <!--Terms & Conditions Checkbox-->
+                                                <label for="agreeTerms">Terms &amp; Conditions
+                                                        <label for="agreeTerms" class="checkbox-container">I agree to
+                                                                the terms &amp; conditions
+                                                                <input type="checkbox" name="agreeTerms" id="agreeTerms"
+                                                                        value="I agree">
+                                                                <span class="checkbox-checkmark agreeTerms"></span>
+                                                        </label>
+                                                        <p><span class="errorTerms"></span></p>
+                                                </label>
+                                                <!--END Terms & Conditions Checkbox-->
+                                        </div>
+                                </div>
+
+                                <!--END form-fields-->
+
+                                <!--Submit button-->
+                                <button type="button" name="previous" class="finalPrevious previous">Previous</button>
+                                <button type="submit" id="postForm" name="next" class="action-button">Submit</button>
+                                <!-- END FIELDSETS -->
+                        </fieldset>
+
+                        <!-- Multi-step indicators-->
+                        <div style="text-align:center;margin-top:0px;display:none;">
+                                <span class="step step1 active">1</span>
+                                <span class="step step2">2</span>
+                                <span class="step step3">3</span>
+                                <span class="step step4">4</span>
+                                <span class="step step5">5</span>
+                                <span class="step step6">6</span>
+                                <span class="step step7">7</span>
+                                <span class="step step8">8</span>
+                        </div>
+                        <!-- End Multi-step indiators-->
+
+                        <!-- END FORM -->
+                </form>
+
+                <!-- END FORM WRAPPER -->
+        </div>
+
+        <!-- Validation & Animation-->
+        <script src="js/animate-script.js" type="text/javascript"></script>
+        <!-- Custom select input fields -->
+        <script src="js/customSelect.js"></script>
+
+
+        <!-- FOOTER CONTAINER -->
+
+        <!-- END FOOTER CONTAINER -->
+
+</body>
+
+</html>
