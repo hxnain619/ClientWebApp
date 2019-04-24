@@ -466,17 +466,14 @@ let validateTextSteps = (a, b, c, d, e) => {
 
 let validateSelectBoxStep = (x, y, z) => {
 	third.addEventListener('click', function () {
-		console.log('clicked 3');
 
 		if (x[0].options && (x[0].options[x[0].selectedIndex].value === 'Choose An Option')) {
-			console.log('true');
 
 			customSelect.style.border = '3px solid #FF0083'; //pink
 			third.style.border = '1px solid #FF0000';
 			error3.textContent = 'Please choose an option';
 
 		} else {
-			console.log('false');
 			error3.textContent = ' ';
 			customSelect.style.border = '1px solid #ccc';
 			third.style.backgroundColor = '#FF0083'; //pink
