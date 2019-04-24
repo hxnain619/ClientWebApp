@@ -48,6 +48,7 @@
                 * {
                         outline: none;
                 }
+
                 legend {
                         line-height: 1;
                 }
@@ -66,14 +67,14 @@
                 <form id="contact">
                         <fieldset class="tab">
                                 <legend>What is your favorite Audio Test Track?</legend>
-                                <input id='favAudioTrack' type="text" placeholder="Favorite test track..." required />
+                                <input id='testTrack' name="testTrack" type="text" placeholder="Favorite test track..." required />
                                 <p><span class="error error1"></span></p>
                                 <button type="button" name="next" class="first action-button">Next</button>
                         </fieldset>
                         <!-- ******** Second Step ********* -->
-                        <fieldset>
+                        <fieldset class="tab">
                                 <legend>What is your Favourite Audio Gear Brand?</legend>
-                                <input id='favAudioGear' type="text" placeholder="Favourite audio brand..." required />
+                                <input id='favBrand' name="favBrand" type="text" placeholder="Favourite audio brand..." required />
                                 <p><span class="error error2"></span></p>
                                 <button type="button" name="previous" class="secondPrevious previous">Previous</button>
                                 <button type="button" name="next" class="second action-button">Next</button>
@@ -83,7 +84,7 @@
                         <fieldset class="tab">
                                 <legend>What is your favorite way to play music?</legend>
                                 <div class="custom-select vehicle-select">
-                                        <select name="excludedMarque" id="options" class="select--box" required>
+                                        <select name="favFileFormat" id="favFileFormat" class="select--box" required>
                                                 <option value="Choose An Option">Choose An Option ...</option>
                                                 <option value="Audio Cassette">Audio Cassette</option>
                                                 <option value="Any diesel Volkswagen">CD</option>
@@ -99,10 +100,10 @@
                                 <button type="button" name="next" class="third action-button">Next</button>
                         </fieldset>
                         <!-- ********** Fourth Step ********** -->
-                        <fieldset class="tab">
+                        <fieldset class="tab ">
                                 <legend>What is your favorite Music Streaming Service?</legend>
                                 <div class="custom-select vehicle-select">
-                                        <select name="excludedMarque" id='services' class="select--box" required>
+                                        <select name="favStream" id='favStream' class="select--box" required>
                                                 <option value="Select Services">Select Services ...</option>
                                                 <option value="None">None</option>
                                                 <option value="Amazon Music">Amazon Music</option>
@@ -126,7 +127,7 @@
                         <fieldset class="tab">
                                 <legend>What is your favorite Digital Audio File Format?</legend>
                                 <div class="custom-select vehicle-select">
-                                        <select name="excludedMarque" id='format' class="select--box" required>
+                                        <select name="favMediaFormat" id='favMediaFormat' class="select--box" required>
                                                 <option value="Select Format">Select Format ...</option>
                                                 <option value="None">None</option>
                                                 <option value="AAC">AAC</option>
@@ -148,23 +149,26 @@
                         <fieldset class="tab">
                                 <legend>What is your favorite piece of high-end audio or audiophile gear that you own?
                                 </legend>
-                                <input id='favPieceOf' type="text" placeholder="enter audio or gear you own .." required />
+                                <input id='brandBrandOwned' name="brandBrandOwned" type="text" placeholder="enter audio or gear you own .."
+                                        required />
                                 <p><span class="error error6"></span></p>
                                 <button type="button" name="previous" class="sixthPrevious previous">Previous</button>
                                 <button type="button" name="next" class="sixth action-button">Next</button>
                         </fieldset>
                         <!-- ************* Seventh Step *********** -->
-                        <fieldset class="tab">
+                        <fieldset class="tab lastPurchase">
                                 <legend>What high-end audio or audiophile gear did you last buy?</legend>
-                                <input id='lastGearBuy' type="text" placeholder="enter your last purchase .." required />
+                                <input id='lastPurchase' name="lastPurchase" type="text" placeholder="enter your last purchase .."
+                                        required />
                                 <p><span class="error error7"></span></p>
                                 <button type="button" name="previous" class="seventhPrevious previous">Previous</button>
                                 <button type="button" name="next" class="seventh action-button">Next</button>
                         </fieldset>
                         <!-- ************* Eighth Step *********** -->
-                        <fieldset class="tab">
+                        <fieldset class="tab nextPurchase">
                                 <legend>What high-end or audiophile gear do you plan to buy next?</legend>
-                                <input id='nextBuy' type="text" placeholder="enter your next purchase .." required />
+                                <input id='nextPurchase' name="nextPurchase" type="text" placeholder="enter your next purchase .."
+                                        required />
                                 <p><span class="error error8"></span></p>
                                 <button type="button" name="previous" class="eighthPrevious previous">Previous</button>
                                 <button type="button" name="next" class="final action-button">Next</button>
@@ -205,6 +209,7 @@
                                                                 id="zipCode" maxlength="5">
                                                         <p><span class='errorZipCode'></span></p>
                                                 </div>
+
 
                                                 <!--options-->
                                                 <label for="state">State
@@ -270,17 +275,36 @@
                                                 </label>
                                                 <!--END options-->
                                                 <!--Terms & Conditions Checkbox-->
-                                                <label for="agreeTerms">Terms &amp; Conditions
-                                                        <label for="agreeTerms" class="checkbox-container">I agree to
-                                                                the terms &amp; conditions
-                                                                <input type="checkbox" name="agreeTerms" id="agreeTerms"
-                                                                        value="I agree">
-                                                                <span class="checkbox-checkmark agreeTerms"></span>
-                                                        </label>
-                                                        <p><span class="errorTerms"></span></p>
-                                                </label>
+
                                                 <!--END Terms & Conditions Checkbox-->
                                         </div>
+                                        
+                                        <label id="resident">
+                                                <label>Are you a resident of one of the contiguous United
+                                                        States (not Alaska or Hawaii)</label>
+
+                                                <label for="residentYes" class="radio-container">Yes
+                                                        <input type="radio" value="Yes" name="resident" id="residentYes"
+                                                               checked required>
+                                                        <span class="radio-checkmark ageYes"></span>
+                                                </label>
+                                                <label for="residentNo" class="radio-container">No
+                                                        <input type="radio" value="No" name="resident" id="residentNo"
+                                                                required>
+                                                        <span class="radio-checkmark ageNo"></span>
+                                                </label>
+                                                <p><span class="errorResident"></span></p>
+
+                                        </label>
+                                        <label for="agreeTerms">Terms &amp; Conditions
+                                                <label for="agreeTerms" class="checkbox-container">I agree to
+                                                        the terms &amp; conditions
+                                                        <input type="checkbox" name="agreeTerms" id="agreeTerms"
+                                                                value="I agree" >
+                                                        <span class="checkbox-checkmark agreeTerms"></span>
+                                                </label>
+                                                <p><span class="errorTerms"></span></p>
+                                        </label>
                                 </div>
 
                                 <!--END form-fields-->

@@ -9,26 +9,27 @@ Orginal Page: http://thecodeplayer.com/walkthrough/jquery-multi-step-form-with-p
 
 let DOMStrings = {
 
+// ******* Text Fields *********
+
 	// Favorite Audio Test Truck
-	FavAudio: '#favAudioTrack',
+	testTrack: '#testTrack',
 
 	// Favorite Audio Gear Brand
-	FavBrand: '#favAudioGear',
-
+	favBrand: '#favBrand',
+	
 	// Favorite Piece of Audio or Gear
-	favPieceOf: '#favPieceOf',
-
+	brandBrandOwned: '#brandBrandOwned',
+	
 	// Last Audio or Gear buy  
-	lastGearBuy: '#lastGearBuy',
-
+	lastPurchase: '#lastPurchase',
+	
 	// Audio or Gear Next Buy
-	nextBuy: '#nextBuy',
-
+	nextPurchase: '#nextPurchase',
 	
 	// Select box
-	options: '#options',
-	services: '#services',
-	format: '#format',
+	favFileFormat: '#favFileFormat',
+	favStream: '#favStream',
+	favMediaFormat: '#favMediaFormat',
 
 	selectBox: '.select--box',
 	customSelect: '.custom-select',
@@ -86,8 +87,11 @@ let DOMStrings = {
 	step9: '.step9',
 }
 
-let FavAudio = document.querySelector(DOMStrings.FavAudio);
-let FavBrand = document.querySelector(DOMStrings.FavBrand);
+let testTrack = document.querySelector(DOMStrings.testTrack);
+let favBrand = document.querySelector(DOMStrings.favBrand);
+let brandBrandOwned = document.querySelector(DOMStrings.brandBrandOwned);
+let lastPurchase = document.querySelector(DOMStrings.lastPurchase);
+let nextPurchase = document.querySelector(DOMStrings.nextPurchase);
 
 let first = document.querySelector(DOMStrings.first);
 let second = document.querySelector(DOMStrings.second);
@@ -128,9 +132,9 @@ let step9 = document.querySelector(DOMStrings.step9);
 
 
 let selectBox = document.querySelectorAll(DOMStrings.selectBox);
-let options = document.querySelectorAll(DOMStrings.options);
-let services = document.querySelectorAll(DOMStrings.services);
-let format = document.querySelectorAll(DOMStrings.format);
+let favFileFormat = document.querySelectorAll(DOMStrings.favFileFormat);
+let favStream = document.querySelectorAll(DOMStrings.favStream);
+let favMediaFormat = document.querySelectorAll(DOMStrings.favMediaFormat);
 let customSelect = document.querySelector(DOMStrings.customSelect);
 
 let fName = document.querySelector(DOMStrings.fName);
@@ -253,14 +257,12 @@ let validateTextSteps = (a, b, c, d, e) => {
 	second.addEventListener('click', function () {
 
 		if (b.value.length === 0) {
-			console.log('empty');
 
 			second.style.border = '1px solid #FF0000';
 			error2.textContent = 'Please fill this field';
 
 			//end
 		} else {
-			console.log('not empty');
 			error2.textContent = '';
 			second.style.backgroundColor = 'rgb(255, 0, 131)'; //pink
 			second.style.border = '1px solid #fff';
@@ -361,7 +363,6 @@ let validateTextSteps = (a, b, c, d, e) => {
 
 			//end
 		} else {
-			console.log('not empty');
 			error7.textContent = '';
 			seventh.style.backgroundColor = 'rgb(255, 0, 131)'; //pink
 			seventh.style.border = '1px solid #fff';
@@ -707,7 +708,6 @@ let stateDeclare = (x) => {
 			submitForm.style.border = '1px solid #FF0000';
 			return false;
 		} else {
-			console.log(x[i].value);
 			errorState.textContent = '';
 			stateSelect.style.border = '1px solid #ccc';
 			return true;
@@ -738,10 +738,10 @@ let agreeToTerms = (x) => {
 }
 
 let concludeInit = () => {
-	validateTextSteps(FavAudio, FavBrand, favPieceOf, lastGearBuy, nextBuy)
-	validateSelectBoxStep(options, services, format);
+	validateTextSteps(testTrack, favBrand, brandBrandOwned, lastPurchase, nextPurchase)
+	validateSelectBoxStep(favFileFormat, favStream, favMediaFormat);
 }
-
+  
 concludeInit();
 
 let redirectFromValuesOne = (x) => {
@@ -787,10 +787,8 @@ let complete = () => {
 			fetch(scriptURL, { method: 'POST', body: new FormData(form) })
 				.then(function (response) {
 					if (response) {
-						console.log("Success!");
 						window.location.replace('submitSuccess.html');
 					}
-					console.log(response);
 				})
 		} else {
 			e.preventDefault();
@@ -800,7 +798,6 @@ let complete = () => {
 			zipCodeDeclare(zipCode);
 			stateDeclare(state);
 			agreeToTerms(terms);
-			console.log("Did not pass");
 		}
 	});
 }
