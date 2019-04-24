@@ -281,26 +281,26 @@
                                                 <!--Terms & Conditions Checkbox-->
 
 
-                                                <div id="resident">
-                                                        <label for="residentYes" class="checkbox-container">
-                                                                Are you a resident of one of the contiguous United
-                                                                States (not Alaska or Hawaii) </label>
+                                                <label for="resident" class="checkbox-container">
+                                                        Are you a resident of one of the contiguous United
+                                                        States (not Alaska or Hawaii)
 
                                                         <input type="checkbox" value="Yes" name="resident"
-                                                                id="residentYes" class="residency" />
-                                                        <span class="checkbox-checkmark ageYes"></span>
-                                                </div>
+                                                                id="resident" />
+                                                        <span class="checkbox-checkmark resident ageYes"></span>
+                                                        <p><span class="errorResident"></span></p>
+                                                </label>
+                                                <label for="agreeTerms">Terms &amp; Conditions
+                                                        <label for="agreeTerms" class="checkbox-container">I agree to
+                                                                the terms &amp; conditions
+                                                                <input type="checkbox" name="agreeTerms" id="agreeTerms"
+                                                                        value="I agree">
+                                                                <span class="checkbox-checkmark agreeTerms"></span>
+                                                        </label>
+                                                        <p><span class="errorTerms"></span></p>
+                                                </label>
                                                 <!--END Terms & Conditions Checkbox-->
                                         </div>
-                                        <label for="agreeTerms">Terms &amp; Conditions
-                                                <label for="agreeTerms" class="checkbox-container">I agree to
-                                                        the terms &amp; conditions
-                                                        <input type="checkbox" name="agreeTerms" id="agreeTerms"
-                                                                value="I agree">
-                                                        <span class="checkbox-checkmark agreeTerms"></span>
-                                                </label>
-                                                <p><span class="errorTerms"></span></p>
-                                        </label>
                                 </div>
 
                                 <!--END form-fields-->
@@ -339,7 +339,7 @@
         <!-- FOOTER CONTAINER -->
 
         <!-- END FOOTER CONTAINER -->
-      
+
 </body>
 
 </html>

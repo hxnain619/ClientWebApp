@@ -9,23 +9,23 @@ Orginal Page: http://thecodeplayer.com/walkthrough/jquery-multi-step-form-with-p
 
 let DOMStrings = {
 
-// ******* Text Fields *********
+	// ******* Text Fields *********
 
 	// Favorite Audio Test Truck
 	testTrack: '#testTrack',
 
 	// Favorite Audio Gear Brand
 	favBrand: '#favBrand',
-	
+
 	// Favorite Piece of Audio or Gear
 	brandBrandOwned: '#brandBrandOwned',
-	
+
 	// Last Audio or Gear buy  
 	lastPurchase: '#lastPurchase',
-	
+
 	// Audio or Gear Next Buy
 	nextPurchase: '#nextPurchase',
-	
+
 	// Select box
 	favMediaFormat: '#favMediaFormat',
 	favStream: '#favStream',
@@ -35,7 +35,7 @@ let DOMStrings = {
 	customSelect: '.custom-select',
 	selectSelected: '.select-selected',
 
-	
+
 	// Next Button
 	first: '.first',
 	second: '.second',
@@ -58,6 +58,8 @@ let DOMStrings = {
 	stateSelect: '.state-select',
 	terms: '#agreeTerms',
 	termsClass: '.agreeTerms',
+	resident: '#resident',
+	residentClass: '.resident',
 
 	// Error span messsages
 	error1: '.error1',
@@ -74,6 +76,7 @@ let DOMStrings = {
 	errorZipCode: '.errorZipCode',
 	errorState: '.errorState',
 	errorTerms: '.errorTerms',
+	errorResident: '.errorResident',
 
 	// Steps
 	step1: '.step1',
@@ -118,6 +121,7 @@ let errorZipCode = document.querySelector(DOMStrings.errorZipCode);
 let errorEmail = document.querySelector(DOMStrings.errorEmail);
 let errorState = document.querySelector(DOMStrings.errorState);
 let errorTerms = document.querySelector(DOMStrings.errorTerms);
+let errorResident = document.querySelector(DOMStrings.errorResident);
 
 // Steps
 let step1 = document.querySelector(DOMStrings.step1);
@@ -146,6 +150,8 @@ let selectedState = document.querySelector(DOMStrings.selectedState);
 let stateSelect = document.querySelector(DOMStrings.stateSelect);
 let terms = document.querySelector(DOMStrings.terms);
 let termsClass = document.querySelector(DOMStrings.termsClass);
+let resident = document.querySelector(DOMStrings.resident);
+let residentClass = document.querySelector(DOMStrings.residentClass);
 
 //jQuery time
 var current_fs, next_fs, previous_fs; //fieldsets
@@ -461,10 +467,10 @@ let validateTextSteps = (a, b, c, d, e) => {
 let validateSelectBoxStep = (x, y, z) => {
 	third.addEventListener('click', function () {
 		console.log('clicked 3');
-		
+
 		if (x[0].options && (x[0].options[x[0].selectedIndex].value === 'Select Format')) {
 			console.log('true');
-			
+
 			customSelect.style.border = '3px solid #FF0083'; //pink
 			third.style.border = '1px solid #FF0000';
 			error3.textContent = 'Please choose an option';
@@ -719,7 +725,7 @@ let stateDeclare = (x) => {
 }
 
 
-let agreeToTerms = (x) => {
+let agreeToTerms = (x, y) => {
 	if (x.checked === true) {
 		termsClass.style.border = '1px solid #bbb';
 		termsClass.style.background = '#ccc'
@@ -739,12 +745,32 @@ let agreeToTerms = (x) => {
 		return false;
 	}
 }
+let agreeToResident = (y) => {
+	if (y.checked === true) {
+		residentClass.style.border = '1px solid #bbb';
+		residentClass.style.background = '#ccc'
+		errorResident.textContent = '';
+		return true;
+	} else {
+		//		termsClass.style.border = '1px solid #980000';
+		//		termsClass.style.border = '1px solid #bbbbbb'; //dark grey
+		residentClass.style.border = '3px solid rgb(255, 0, 131)'; //pink
+		residentClass.style.background = '#ffdddd' //light grey
+		errorResident.textContent = 'Please enter your residency';
+		//		errorTerms.style.color = '#FF0000'; //red
+		errorResident.style.color = 'rgb(255, 0, 131)'; //pink
+		//		submitForm.style.background = '#980000';
+		//		submitForm.style.border =  '1px solid #980000';
+		submitForm.style.border = '1px solid #FF0000';
+		return false;
+	}
+}
 
 let concludeInit = () => {
 	validateTextSteps(testTrack, favBrand, brandBrandOwned, lastPurchase, nextPurchase)
-	validateSelectBoxStep(  favMediaFormat, favStream, favFileFormat);
+	validateSelectBoxStep(favMediaFormat, favStream, favFileFormat);
 }
-  
+
 concludeInit();
 
 let redirectFromValuesOne = (x) => {
@@ -783,7 +809,7 @@ let complete = () => {
 
 	let form = document.querySelector('form');
 	form.addEventListener('submit', e => {
-		if ((nameFirst(fName) && nameLast(lName) && emailDeclare(email) && zipCodeDeclare(zipCode) && stateDeclare(state) && agreeToTerms(terms)) === true) {
+		if ((nameFirst(fName) && nameLast(lName) && emailDeclare(email) && zipCodeDeclare(zipCode) && stateDeclare(state) && agreeToTerms(terms) && agreeToResident(resident)) === true) {
 
 			e.preventDefault();
 			addLoader();
@@ -801,6 +827,7 @@ let complete = () => {
 			zipCodeDeclare(zipCode);
 			stateDeclare(state);
 			agreeToTerms(terms);
+			agreeToResident(resident);
 		}
 	});
 }
