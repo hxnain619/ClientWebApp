@@ -27,9 +27,9 @@ let DOMStrings = {
 	nextPurchase: '#nextPurchase',
 	
 	// Select box
-	favFileFormat: '#favFileFormat',
-	favStream: '#favStream',
 	favMediaFormat: '#favMediaFormat',
+	favStream: '#favStream',
+	favFileFormat: '#favFileFormat',
 
 	selectBox: '.select--box',
 	customSelect: '.custom-select',
@@ -89,9 +89,9 @@ let DOMStrings = {
 
 let testTrack = document.querySelector(DOMStrings.testTrack);
 let favBrand = document.querySelector(DOMStrings.favBrand);
-let brandBrandOwned = document.querySelector(DOMStrings.brandBrandOwned);
-let lastPurchase = document.querySelector(DOMStrings.lastPurchase);
-let nextPurchase = document.querySelector(DOMStrings.nextPurchase);
+// let brandBrandOwned = document.querySelector(DOMStrings.brandBrandOwned);
+// let lastPurchase = document.querySelector(DOMStrings.lastPurchase);
+// let nextPurchase = document.querySelector(DOMStrings.nextPurchase);
 
 let first = document.querySelector(DOMStrings.first);
 let second = document.querySelector(DOMStrings.second);
@@ -132,9 +132,9 @@ let step9 = document.querySelector(DOMStrings.step9);
 
 
 let selectBox = document.querySelectorAll(DOMStrings.selectBox);
-let favFileFormat = document.querySelectorAll(DOMStrings.favFileFormat);
-let favStream = document.querySelectorAll(DOMStrings.favStream);
 let favMediaFormat = document.querySelectorAll(DOMStrings.favMediaFormat);
+let favStream = document.querySelectorAll(DOMStrings.favStream);
+let favFileFormat = document.querySelectorAll(DOMStrings.favFileFormat);
 let customSelect = document.querySelector(DOMStrings.customSelect);
 
 let fName = document.querySelector(DOMStrings.fName);
@@ -460,14 +460,17 @@ let validateTextSteps = (a, b, c, d, e) => {
 
 let validateSelectBoxStep = (x, y, z) => {
 	third.addEventListener('click', function () {
-
-		if (x[0].options && (x[0].options[x[0].selectedIndex].value === 'Choose An Option')) {
-
+		console.log('clicked 3');
+		
+		if (x[0].options && (x[0].options[x[0].selectedIndex].value === 'Select Format')) {
+			console.log('true');
+			
 			customSelect.style.border = '3px solid #FF0083'; //pink
 			third.style.border = '1px solid #FF0000';
 			error3.textContent = 'Please choose an option';
 
 		} else {
+			console.log('false');
 			error3.textContent = ' ';
 			customSelect.style.border = '1px solid #ccc';
 			third.style.backgroundColor = '#FF0083'; //pink
@@ -558,7 +561,7 @@ let validateSelectBoxStep = (x, y, z) => {
 		}
 	});
 	fifth.addEventListener('click', function () {
-		if (z[0].options && (z[0].options[z[0].selectedIndex].value === 'Select Format')) {
+		if (z[0].options && (z[0].options[z[0].selectedIndex].value === 'Choose An Option')) {
 			customSelect.style.border = '3px solid #FF0083'; //pink
 			fifth.style.border = '1px solid #FF0000';
 			error5.textContent = 'Please choose an option';
