@@ -146,7 +146,7 @@
                                 <p><span class="error error5"></span></p>
                                 <!--End Options-->
                                 <button type="button" name="previous" class="fifthPrevious previous">Previous</button>
-                                    <button type="button" name="next" class="fifth action-button">Next</button>
+                                <button type="button" name="next" class="fifth action-button">Next</button>
                         </fieldset>
 
                         <!-- ************* Sixth Step *********** -->
@@ -281,26 +281,15 @@
                                                 <!--Terms & Conditions Checkbox-->
 
 
-                                                <label id="resident">
-                                                        <label>Are you a resident of one of the contiguous United
-                                                                States (not Alaska or Hawaii)</label>
-
+                                                <div id="resident">
                                                         <label for="residentYes" class="checkbox-container">
-                                                                <input type="checkbox" value="Yes" name="resident"
-                                                                        id="residentYes" class="residency"
-                                                                        onclick="selectOne(this.value)" checked
-                                                                        >Yes
-                                                                <span class="checkbox-checkmark ageYes"></span>
-                                                        </label>
-                                                        <label for="residentNo" class="checkbox-container">
-                                                                <input type="checkbox" value="No" name="resident"
-                                                                        id="residentNo" class="residency"
-                                                                        onclick="selectOne(this.value)" >No
-                                                                <span class="checkbox-checkmark ageNo"></span>
-                                                        </label>
-                                                        <p><span class="errorResident"></span></p>
+                                                                Are you a resident of one of the contiguous United
+                                                                States (not Alaska or Hawaii) </label>
 
-                                                </label>
+                                                        <input type="checkbox" value="Yes" name="resident"
+                                                                id="residentYes" class="residency" />
+                                                        <span class="checkbox-checkmark ageYes"></span>
+                                                </div>
                                                 <!--END Terms & Conditions Checkbox-->
                                         </div>
                                         <label for="agreeTerms">Terms &amp; Conditions
@@ -350,20 +339,7 @@
         <!-- FOOTER CONTAINER -->
 
         <!-- END FOOTER CONTAINER -->
-        <script>
-
-
-                function selectOne(checkbox) {
-                        var x = document.getElementsByClassName('residency');
-                        var i;
-
-                        for (i = 0; i < x.length; i++) {
-                                if (x[i].value != checkbox) x[i].checked = false;
-                        }
-                }
-
-
-        </script>
+      
 </body>
 
 </html>
