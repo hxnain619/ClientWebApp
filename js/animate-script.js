@@ -768,7 +768,7 @@ let agreeToResident = (y) => {
 
 let concludeInit = () => {
 	validateTextSteps(testTrack, favBrand, brandBrandOwned, lastPurchase, nextPurchase)
-	validateSelectBoxStep(favFileFormat, favStream, favMediaFormat);
+	validateSelectBoxStep(favMediaFormat, favStream, favFileFormat);
 }
 
 concludeInit();
