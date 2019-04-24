@@ -468,7 +468,7 @@ let validateSelectBoxStep = (x, y, z) => {
 	third.addEventListener('click', function () {
 		console.log('clicked 3');
 
-		if (x[0].options && (x[0].options[x[0].selectedIndex].value === 'Select Format')) {
+		if (x[0].options && (x[0].options[x[0].selectedIndex].value === 'Choose An Option')) {
 			console.log('true');
 
 			customSelect.style.border = '3px solid #FF0083'; //pink
@@ -567,7 +567,7 @@ let validateSelectBoxStep = (x, y, z) => {
 		}
 	});
 	fifth.addEventListener('click', function () {
-		if (z[0].options && (z[0].options[z[0].selectedIndex].value === 'Choose An Option')) {
+		if (z[0].options && (z[0].options[z[0].selectedIndex].value === 'Select Format')) {
 			customSelect.style.border = '3px solid #FF0083'; //pink
 			fifth.style.border = '1px solid #FF0000';
 			error5.textContent = 'Please choose an option';
@@ -768,7 +768,7 @@ let agreeToResident = (y) => {
 
 let concludeInit = () => {
 	validateTextSteps(testTrack, favBrand, brandBrandOwned, lastPurchase, nextPurchase)
-	validateSelectBoxStep(favMediaFormat, favStream, favFileFormat);
+	validateSelectBoxStep(favFileFormat, favStream, favMediaFormat);
 }
 
 concludeInit();
